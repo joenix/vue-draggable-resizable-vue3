@@ -1,0 +1,80 @@
+@point: -6px;
+@point-position: -4px;
+@point-space: 10px;
+@point-color: #333;
+@point-background: #eee;
+
+@namespace: handle;
+
+.vdr {
+  touch-action: none;
+  position: absolute;
+  box-sizing: border-box;
+  border: 1px dashed transparent;
+
+  &.active {
+    border-color: @point-color;
+  }
+}
+.@{namespace} {
+  box-sizing: border-box;
+  position: absolute;
+  width: @point-space;
+  height: @point-space;
+  background: @point-background;
+  border: 1px solid @point-color;
+}
+.@{namespace}-tl {
+  top: @point;
+  left: @point;
+  cursor: nw-resize;
+}
+.@{namespace}-tm {
+  top: @point;
+  left: 50%;
+  margin-left: @point-position;
+  cursor: n-resize;
+}
+.@{namespace}-tr {
+  top: @point;
+  right: @point;
+  cursor: ne-resize;
+}
+.@{namespace}-ml {
+  top: 50%;
+  margin-top: @point-position;
+  left: @point;
+  cursor: w-resize;
+}
+.@{namespace}-mr {
+  top: 50%;
+  margin-top: @point-position;
+  right: @point;
+  cursor: e-resize;
+}
+.@{namespace}-bl {
+  bottom: @point;
+  left: @point;
+  cursor: sw-resize;
+}
+.@{namespace}-bm {
+  bottom: @point;
+  left: 50%;
+  margin-left: @point-position;
+  cursor: s-resize;
+}
+.@{namespace}-br {
+  bottom: @point;
+  right: @point;
+  cursor: se-resize;
+}
+@media only screen and (max-width: 768px) {
+  [class*='@{namespace}-']:before {
+    content: '';
+    left: @point;
+    right: @point;
+    bottom: @point;
+    top: @point;
+    position: absolute;
+  }
+}
