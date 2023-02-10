@@ -17,20 +17,20 @@ yarn add vue-draggable-resizable-vue3
 ## use
 
 ```js
-import { plugin } from "vue-draggable-resizable-vue3";
+import { VueDraggableResizable } from 'vue-draggable-resizable-vue3';
 
-app.use(plugin);
+app.use(VueDraggableResizable);
 ```
 
 ## or
 
 ```js
-import VueDraggableResizable from "vue-draggable-resizable-vue3";
+import VueDraggableResizable from 'vue-draggable-resizable-vue3';
 
 export default {
   components: {
-    VueDraggableResizable
-  }
+    VueDraggableResizable,
+  },
 };
 ```
 

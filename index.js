@@ -1,7 +1,7 @@
 // Use Component
-import VueDraggableResizable from "./src/index.vue";
+import VueDraggableResizableComponent from './src/index.vue';
 
-// Set Install for `app.use`
+// Declare Install for `app.use`
 function install(app) {
   // If is Installed
   if (install.installed) {
@@ -12,11 +12,11 @@ function install(app) {
   install.installed = true;
 
   // Register Component name `VueDraggableResizable`
-  app.component("VueDraggableResizable", VueDraggableResizable);
+  app.component('VueDraggableResizable', VueDraggableResizableComponent);
 }
 
 // Export as Plugin
-export const plugin = { install };
+export const VueDraggableResizable = { install };
 
 /**
  * Register Component in Vue2 for Async
@@ -27,12 +27,12 @@ export const plugin = { install };
 let Global = null;
 
 // in Window
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   Global = window;
 }
 
 // in Global
-if (typeof global !== "undefined") {
+if (typeof global !== 'undefined') {
   Global = global;
 }
 
@@ -42,8 +42,8 @@ let GlobalVue = Global.App || Global.Vue;
 // do Register
 if (GlobalVue && GlobalVue.use) {
   // Register Plugin
-  GlobalVue.use(plugin);
+  GlobalVue.use(VueDraggableResizable);
 }
 
 // Export Component
-export default VueDraggableResizable;
+export default VueDraggableResizableComponent;
