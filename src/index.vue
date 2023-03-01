@@ -323,7 +323,7 @@ export default {
       this.bottom = this.parentHeight - this.height - this.top;
 
       if (this.active) {
-        this.$emit('activated');
+        this.$emit('activated', this);
       }
     },
 
@@ -391,7 +391,7 @@ export default {
         if (!this.enabled) {
           this.enabled = true;
 
-          this.$emit('activated');
+          this.$emit('activated', this);
           this.$emit('update:active', true);
         }
 
